@@ -27,6 +27,7 @@ chrome_prefs = {
 chrome_options.add_experimental_option("prefs", chrome_prefs)
 chrome_options.add_argument("--headless")
 
+
 # Browser Control
 browser = webdriver.Chrome(options=chrome_options); time.sleep(3)
 browser.get("https://crxviewer.com")
