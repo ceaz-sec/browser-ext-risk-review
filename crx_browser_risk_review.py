@@ -33,6 +33,7 @@ browser.get("https://crxviewer.com")
 # maximize window
 # browser.maximize_window(); time.sleep(2)
 
+
 def get_ext_url() -> str:
     try:
         print("Please Enter a Chrome Extension url:\n")
