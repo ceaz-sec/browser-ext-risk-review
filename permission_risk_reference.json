@@ -1,0 +1,155 @@
+{
+  "permissions": [
+    {
+      "name": "<all_urls>",
+      "risk": "CRITICAL",
+      "notes": "Full read/write access to all websites; credential theft, injection, scraping"
+    },
+    {
+      "name": "*://*/*",
+      "risk": "CRITICAL",
+      "notes": "Equivalent to <all_urls>; global host access"
+    },
+    {
+      "name": "webRequest",
+      "risk": "HIGH",
+      "notes": "Can observe/modify network requests"
+    },
+    {
+      "name": "webRequestBlocking",
+      "risk": "CRITICAL",
+      "notes": "Can block/modify all requests → MITM-like capability"
+    },
+    {
+      "name": "declarativeNetRequest",
+      "risk": "MED",
+      "notes": "Rule-based blocking; limited inspection capability"
+    },
+    {
+      "name": "proxy",
+      "risk": "CRITICAL",
+      "notes": "Full traffic redirection; extreme risk if malicious"
+    },
+    {
+      "name": "history",
+      "risk": "HIGH",
+      "notes": "Full browsing history = privacy-sensitive"
+    },
+    {
+      "name": "tabs",
+      "risk": "MED",
+      "notes": "URLs and titles only; less sensitive than full host access"
+    },
+    {
+      "name": "cookies",
+      "risk": "HIGH",
+      "notes": "Session hijacking, tracking"
+    },
+    {
+      "name": "identity",
+      "risk": "HIGH",
+      "notes": "OAuth tokens / account identity exposure"
+    },
+    {
+      "name": "identity.email",
+      "risk": "HIGH",
+      "notes": "Direct PII exposure"
+    },
+    {
+      "name": "topSites",
+      "risk": "MED",
+      "notes": "Reveals browsing patterns"
+    },
+    {
+      "name": "scripting",
+      "risk": "HIGH",
+      "notes": "DOM/JS injection → credential scraping, actions"
+    },
+    {
+      "name": "content_scripts",
+      "risk": "HIGH",
+      "notes": "Reads/modifies page DOM"
+    },
+    {
+      "name": "activeTab",
+      "risk": "LOW",
+      "notes": "Temporary access; user-initiated"
+    },
+    {
+      "name": "clipboardRead",
+      "risk": "HIGH",
+      "notes": "Can read sensitive clipboard data"
+    },
+    {
+      "name": "clipboardWrite",
+      "risk": "MED",
+      "notes": "Can overwrite clipboard; phishing vector possible"
+    },
+    {
+      "name": "downloads",
+      "risk": "MED",
+      "notes": "File manipulation"
+    },
+    {
+      "name": "fileSystem",
+      "risk": "HIGH",
+      "notes": "Local file access; data exfiltration risk"
+    },
+    {
+      "name": "nativeMessaging",
+      "risk": "CRITICAL",
+      "notes": "Bridge to local OS programs; high escalation potential"
+    },
+    {
+      "name": "management",
+      "risk": "HIGH",
+      "notes": "Can control other extensions"
+    },
+    {
+      "name": "enterprise.deviceAttributes",
+      "risk": "CRITICAL",
+      "notes": "Enterprise-only, highly sensitive"
+    },
+    {
+      "name": "storage",
+      "risk": "LOW",
+      "notes": "Local extension storage; minimal risk"
+    },
+    {
+      "name": "notifications",
+      "risk": "LOW",
+      "notes": "Minimal security impact"
+    },
+    {
+      "name": "contextMenus",
+      "risk": "LOW",
+      "notes": "UI only"
+    },
+    {
+      "name": "alarms",
+      "risk": "LOW",
+      "notes": "Scheduling; low risk"
+    },
+    {
+      "name": "idle",
+      "risk": "MED",
+      "notes": "Can track activity; low/moderate risk"
+    },
+    {
+      "name": "background",
+      "risk": "MED",
+      "notes": "Persistent execution; amplifies other risks"
+    },
+    {
+      "name": "unlimitedStorage",
+      "risk": "MED",
+      "notes": "Potential for data hoarding"
+    },
+    {
+      "name": "dns",
+      "risk": "HIGH",
+      "notes": "Can manipulate DNS requests; redirect or poison traffic"
+    }
+  ]
+}
+

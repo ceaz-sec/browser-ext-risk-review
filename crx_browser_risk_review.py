@@ -8,12 +8,13 @@ from selenium.common.exceptions import ElementNotVisibleException
 from selenium.common.exceptions import ElementNotInteractableException
 import os
 import re
+import subprocess
 import time
 
 # Open Chrome in Incognito mode
 chrome_options = Options()
 
-download_dir = "/home/ceaz/Security_Niche/Projects/browser-ext-risk-review/source_code_extraction"
+download_dir = "/home/ceaz/Security_Niche/Projects/browser-ext-risk-review/source-code-extraction"
 
 # Set Chrome preferences
 chrome_prefs = {
@@ -42,6 +43,10 @@ def get_ext_url() -> str:
         print(error)
     return ext_url
 
+#def get_chrome_ext_name() -> str:
+#    try:
+
+
 def parse_ext_id(ext_url: str) -> str:
     try:
         match = re.search(r"/([a-z]{32})", ext_url)
@@ -51,14 +56,6 @@ def parse_ext_id(ext_url: str) -> str:
     except Exception as error:
         print(error)
     ext_id = match.group(1)
-    return ext_id
-
-def parse_ext_id_2(ext_url: str) -> str:
-    try:
-        match = re.search(r"(?<=/)[a-z0-9]+$", ext_url)
-        ext_id = match.group()
-    except Exception as error:
-        print(error)
     return ext_id
 
 def get_crx_source_code(ext_id: str) -> None:
@@ -73,6 +70,12 @@ def get_crx_source_code(ext_id: str) -> None:
     except (ElementNotInteractableException, ElementNotVisibleException, NoSuchElementException) as error:
         print(error)
 
+def unzip_source_code() -> None:
+    try:
+        unzip = subprocess.Popen(f'unzip {download_dir}')
+    except Exception as error:
+        print(error)
+    return None
 
 def main():
     ext_url = get_ext_url()
@@ -80,6 +83,8 @@ def main():
     ext_id = parse_ext_id(ext_url)
 
     get_crx_source_code(ext_id)
+
+    unzip_source_code()
 
 if __name__=='__main__':
   main()
