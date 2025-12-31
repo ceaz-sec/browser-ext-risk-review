@@ -13,7 +13,7 @@ import time
 # Open Chrome in Incognito mode
 chrome_options = Options()
 
-download_dir = "/home/ceaz/Security_Niche/Projects/browser-ext-risk-review/source_code_extraction"
+download_dir = "/home/ceaz/Security_Niche/Projects/browser-extension-risk/source_code_extraction"
 
 # Set Chrome preferences
 chrome_prefs = {
@@ -25,7 +25,10 @@ chrome_prefs = {
 }
 
 chrome_options.add_experimental_option("prefs", chrome_prefs)
-chrome_options.add_argument("--headless")
+# chrome_options.add_argument("--incognito")
+# chrome_options.add_argument("--headless")
+# chrome_options.add_argument("--no-sandbox")
+
 
 # Browser Control
 browser = webdriver.Chrome(options=chrome_options); time.sleep(3)
