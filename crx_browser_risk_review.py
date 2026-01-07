@@ -14,7 +14,7 @@ import time
 # Open Chrome in Incognito mode
 chrome_options = Options()
 
-download_dir = "/home/ceaz/Security_Niche/Projects/browser-ext-risk-review/source-code-extraction"
+download_dir = "/home/ceaz/Security_Niche/Projects/browser-ext-risk-review/source_code_extraction"
 
 # Set Chrome preferences
 chrome_prefs = {
@@ -38,14 +38,25 @@ def get_ext_url() -> str:
     try:
         print("Please Enter a Chrome Extension url:\n")
         ext_url = input()
-        print(f"Chrome Extension url:\n{ext_url}")
+        browser.switch_to.new_window('tab'); time.sleep(3)
+        browser.get(ext_url); time.sleep(4)
+        browser.switch_to.window(browser.window_handles[0]) #Switch back to crxviewer site
     except Exception as error:
         print(error)
     return ext_url
 
-#def get_chrome_ext_name() -> str:
-#    try:
-
+def last_updated(ext_url) -> str:
+    try:
+        browser.switch_to.new_window('tab'); time.sleep(3)
+        browser.get(ext_url); time.sleep(7)
+        updated_date = browser.find_element(By.XPATH, "//div[text()='Updated']/following-sibling::div").text; time.sleep(4)
+        print(f"Last Updated Date: {updated_date}")
+        with open("last_update.txt", "a") as f:
+            f.write(f"Last Updated: {updated_date}\n")
+        browser.switch_to.window(browser.window_handles[0])
+    except (ElementNotInteractableException, ElementNotVisibleException, NoSuchElementException) as error:
+        print(error)
+    return updated_date
 
 def parse_ext_id(ext_url: str) -> str:
     try:
@@ -70,9 +81,20 @@ def get_crx_source_code(ext_id: str) -> None:
     except (ElementNotInteractableException, ElementNotVisibleException, NoSuchElementException) as error:
         print(error)
 
-def unzip_source_code() -> None:
+def unzip_source_code(ext_id) -> None:
     try:
-        unzip = subprocess.Popen(f'unzip {download_dir}')
+        unzip = ["unzip", f"./source_code_extraction/{ext_id}.zip", "-d", "./source_code_extraction"]
+        process = subprocess.check_output(unzip, text=True)
+        print(process)
+    except Exception as error:
+        print(error)
+    return None
+
+def call_manifest_parser() -> None:
+    try:
+        manifest_parser = ["lua", "manifest_risk_assessment.lua"]
+        process = subprocess.check_output(manifest_parser, text=True)
+        print(process)
     except Exception as error:
         print(error)
     return None
@@ -84,7 +106,11 @@ def main():
 
     get_crx_source_code(ext_id)
 
-    unzip_source_code()
+    last_updated(ext_url)
+
+    unzip_source_code(ext_id)
+
+    call_manifest_parser()
 
 if __name__=='__main__':
   main()
