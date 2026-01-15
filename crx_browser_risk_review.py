@@ -83,7 +83,7 @@ def get_crx_source_code(ext_id: str) -> None:
 
 def unzip_source_code(ext_id) -> None:
     try:
-        unzip = ["unzip", f"./source_code_extraction/{ext_id}.zip", "-d", "./source_code_extraction"]
+        unzip = ["unzip", "-q", f"./source_code_extraction/{ext_id}.zip", "-d", "./source_code_extraction"]
         process = subprocess.check_output(unzip, text=True)
         print(process)
     except Exception as error:

@@ -3,7 +3,7 @@
 local cjson = require "cjson.safe"
 
 -- Variables for file naming
-local FILENAME = "RISK_ASSESSMENT_RPT.md"
+local FILENAME = "RISK_ASSESSMENT_RPT.md" or arg[1] 
 
 -- File Helpers --
 
