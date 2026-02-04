@@ -10,7 +10,7 @@
 | :--- | :--- | :---: | :--- |
 | Permission | `alarms` | **LOW** | Scheduling; low risk |
 | Permission | `background` | **MED** | Persistent execution; amplifies other risks |
-| Permission | `browsingData` | **LOW** | Permission not found in reference |
+| Permission | `browsingData` | **HIGH** | It allows extensions to delete browsing history, cookies and ceched data across all websites |
 | Permission | `cookies` | **HIGH** | Session hijacking, tracking |
 | Permission | `declarativeNetRequest` | **MED** | Rule-based blocking; limited inspection capability |
 | Permission | `notifications` | **LOW** | Minimal security impact |

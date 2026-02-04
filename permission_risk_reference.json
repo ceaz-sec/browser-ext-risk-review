@@ -51,6 +51,16 @@
       "notes": "OAuth tokens / account identity exposure"
     },
     {
+      "name": "browsingData",
+      "risk": "HIGH",
+      "notes": "It allows extensions to delete browsing history, cookies and ceched data across all websites"
+    },
+    {
+      "name": "privacy",
+      "risk": "HIGH",
+      "notes": "Allows extensions to control Chrome settings that affect user privacy (ie Do Not Track, third-party cookies, autofill, etc)."
+    },
+    {
       "name": "identity.email",
       "risk": "HIGH",
       "notes": "Direct PII exposure"
@@ -69,6 +79,11 @@
       "name": "content_scripts",
       "risk": "HIGH",
       "notes": "Reads/modifies page DOM"
+    },
+    {
+      "name": "offscreen",
+      "risk": "HIGH",
+      "notes": "Allows hidden background execution, enabling stealthy activity without user awareness"
     },
     {
       "name": "activeTab",
