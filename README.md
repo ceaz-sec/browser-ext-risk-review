@@ -36,3 +36,7 @@ This project analyzes Chrome extension manifests and permissions and gives a ris
 
 ## 💡Usage
 - python crx_browser_risk_review.py
+
+## Risk References
+- https://cheatsheetseries.owasp.org/cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.html
+- https://developer.chrome.com/docs/extensions/reference/api
