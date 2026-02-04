@@ -153,7 +153,7 @@
     {
       "name": "sidePanel",
       "risk": "MED",
-      "notes": "Persistent window into browsing, could be used for tracking. Could be used to steal data like AI data stealing malware."
+      "notes": "Persistent window into browsing, could be used for tracking."
     }
   ]
 }
