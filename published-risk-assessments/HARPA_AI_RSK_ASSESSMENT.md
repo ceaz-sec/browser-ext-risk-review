@@ -1,9 +1,9 @@
 # Browser Extension Risk Assessment: Harpa AI
 > **Generated on:** Mon Feb  2 16:51:44 2026
-> **Extension Last Updated:** Last Updated: January 27, 2026
+> **Extension Last Updated:** Last Updated: February 4, 2026
 
 ## Disclaimer
-*** This assessment analyzes permissions and configuration to identify potential security and privacy risks based on capability alone. It does not assert malicious intent or confirmed exploitation.”
+- **Statement:** `This assessment analyzes permissions and configuration to identify potential security and privacy risks based on capability alone. It does not assert malicious intent or confirmed exploitation.`
 
 ## Permission Analysis
 | Type | Permission | Risk | Details & Notes |
@@ -26,7 +26,7 @@
 ### Background Configuration
 - **Service Worker:** `/bg.js`
 
-## Potential URL Communications
+### Potential URL Communications
 ```text
 http://localhost
 http://quickchart.io.
