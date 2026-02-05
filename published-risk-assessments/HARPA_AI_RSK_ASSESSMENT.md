@@ -1,9 +1,13 @@
 # Browser Extension Risk Assessment: Harpa AI
 > **Generated on:** Mon Feb  2 16:51:44 2026
+> **Owner/Developer:** Yaroslav Danilov 
 > **Extension Last Updated:** Last Updated: February 4, 2026
 
 ## Disclaimer
 - **Statement:** `This assessment analyzes permissions and configuration to identify potential security and privacy risks based on capability alone. It does not assert malicious intent or confirmed exploitation.`
+
+### Overview
+`Bring all AI models into one sidebar. Make AI aware of the web page you're on. Automate search, summarize videos & PDFs, monitor prices, and extract data. Trusted by over 400.000 users and companies.`
 
 ## Permission Analysis
 | Type | Permission | Risk | Details & Notes |
