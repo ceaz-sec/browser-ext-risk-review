@@ -1,0 +1,17 @@
+https://affirm.com/api
+https://affirm-stage.com/api
+https://be228ae3f1d08c9baae06143b8e2e7e4
+https://browser-extension.affirm.com/
+https://www.
+https://www.affirm.com
+https://www.affirm.com/api/chrono/v3/collect
+https://www.affirm.com/api/superapp/killswitch/check_status
+https://www.affirm.com/browser-extension
+https://www.affirm.com/browser-extension/install
+https://www.affirm.com/products/checkout
+https://www.affirm.com/shopping/browser-extension/new
+https://www.affirm.com/u/browser-extension/shops/
+https://www.affirm-stage.com
+https://www.affirm-stage.com/api/chrono/v3/collect
+https://www.affirm-stage.com/api/superapp/killswitch/check_status
+http://www.example.com
