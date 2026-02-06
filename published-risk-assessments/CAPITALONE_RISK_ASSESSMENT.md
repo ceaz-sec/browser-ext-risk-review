@@ -1,7 +1,7 @@
 # Browser Extension Risk Assessment: Capital One Shopping: Save Now
 > **Generated on:** Fri Feb  6 12:06PM
 > **Owner/Developer:** Capital One
-> **User Count:** 400,000 users
+> **User Count:** 11,000,000 users
 > **Extension Last Updated:** Last Updated: February 6, 2026
 
 ## Disclaimer
