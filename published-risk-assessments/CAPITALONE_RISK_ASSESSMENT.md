@@ -7,10 +7,9 @@
 ## Disclaimer
 - **Statement:** `This assessment analyzes permissions and configuration to identify potential security and privacy risks based on capability alone. It does not assert malicious intent or confirmed exploitation.`
 
-- **Overview:** `A simple and free way to help you save online
-Available codes are instantly applied to a users cart during checkout.
-
-Capital One scoures the web to search for better deals from online stores like Amazon, Target, Nike and over 100,000 others. Capital One does the shopping for its users.`
+## Overview
+- `A simple and free way to help you save online
+Available codes are instantly applied to a users cart during checkout. Capital One scoures the web to search for better deals from online stores like Amazon, Target, Nike and over 100,000 others. Capital One does the shopping for its users.`
 
 
 
