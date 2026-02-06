@@ -28,7 +28,7 @@
 ### Background Configuration
 - **Service Worker:** `background.js`
 
-## Potenital Endpoint Communications
+## Potential Endpoint Communications
 ```text
 https://affirm.com/api
 https://affirm-stage.com/api
