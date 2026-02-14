@@ -90,6 +90,14 @@ def unzip_source_code(ext_id) -> None:
         print(error)
     return None
 
+def write_ext_id(ext_id) -> None:
+    try:
+        with open("ext_id.txt", "w") as file:
+            file.write(ext_id)
+    except Exception as error:
+        print(error)
+    return None
+
 def call_manifest_parser() -> None:
     try:
         manifest_parser = ["lua", "manifest_risk_assessment.lua"]
@@ -109,6 +117,8 @@ def main():
     last_updated(ext_url)
 
     unzip_source_code(ext_id)
+
+    write_ext_id(ext_id)
 
     call_manifest_parser()
 

@@ -26,12 +26,26 @@ local function check_ext_update()
     end
 end
 
+-- Read Extension ID --
+local function check_ext_id()
+    local file = io.open("ext_id.txt", "r")
+    if file then
+        local ext_id = file:read("*a")
+        print(ext_id)
+        file:close()
+        return ext_id
+    else
+        return "Unkown (File is not found)"
+    end
+end
+
 -- Markdown Initialization --
 
-local function init_markdown(ext_name, update_info)
+local function init_markdown(ext_name, ext_id, update_info)
     local f = io.open(FILENAME, "w")
     if f then
         f:write("# Browser Extension Risk Assessment: " .. ext_name .. "\n")
+        f:write("## Exension ID: " .. ext_id .. "\n\n")
         f:write("> **Generated on:** " .. os.date() .. "\n")
         f:write("> **Extension Last Updated:** " .. update_info:gsub("\n", "") .. "\n\n")
         f:write("## Permission Analysis\n")
@@ -75,12 +89,12 @@ end
 
 -- Manifest Parsing --
 
-local function parse_manifest(content, risk_lookup, update_content)
+local function parse_manifest(content, risk_lookup, update_content, ext_id)
     local manifest = assert(cjson.decode(content))
     local extension_name = manifest.name or "Unknown Extension"
     
     -- Initialize the Markdown file now that we have the name
-    init_markdown(extension_name, update_content)
+    init_markdown(extension_name, ext_id, update_content)
 
     print("Extension Name: " .. extension_name)
     print("Version: " .. (manifest.version or ""))
@@ -117,13 +131,16 @@ end
 
 -- 1. Get update info
 local update_content = check_ext_update()
+local ext_id = check_ext_id()
+
 print("Update Reference: " .. update_content)
+print("Extension ID: " .. ext_id)
 
 -- 2. Load resources
 local manifest_content = read_file("./source_code_extraction/manifest.json")
 local risk_lookup = load_permission_risk_reference()
 
 -- 3. Parse Manifest (this now triggers the MD initialization)
-parse_manifest(manifest_content, risk_lookup, update_content)
+parse_manifest(manifest_content, risk_lookup, update_content, ext_id)
 
 print("\n[SUCCESS] Assessment written to " .. FILENAME)
